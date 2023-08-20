@@ -13,6 +13,12 @@ const changePokemon = async () => {
 
   let response = await data.json();
   console.log(response);
+
+  image.src = response.sprites.front_default;
+  pokeNumber.textContent = `#${response.id}`;
+  pokeName.textContent = response.name;
 };
 
+//initialisation de l'API
+changePokemon();
 button.addEventListener("click", changePokemon);
